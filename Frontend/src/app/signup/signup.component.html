@@ -1,0 +1,19 @@
+<form class="container" (ngSubmit)="addUser()" #signup="ngForm">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Enter Username</label>
+      <input type="text" name="username" [(ngModel)]="user.username"  #name="ngModel" [ngModelOptions]="{standalone: true}" required    [class.is-invalid]="name.invalid && name.touched"  class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-6">
+      <label for="inputAddress2" class="form-label">Enter Password</label>
+      <input type="password" name="password" [(ngModel)]="user.password" #pwd="ngModel" [ngModelOptions]="{standalone: true}" required minlength="5"   [class.is-invalid]="pwd.invalid && pwd.touched"  class="form-control" id="inputAddress2">
+    </div>
+    <div class="col-6">
+      <label for="inputAddress3" class="form-label">Re-enter Password</label>
+      <input type="password" name="repassword" [(ngModel)]="user.repassword" #repwd="ngModel" [ngModelOptions]="{standalone: true}" required minlength="5"   [class.is-invalid]="repwd.invalid && repwd.touched"  class="form-control" id="inputAddress3" >
+    </div>
+    <p class="error">{{error}}</p>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </div>
+  </form>
+  

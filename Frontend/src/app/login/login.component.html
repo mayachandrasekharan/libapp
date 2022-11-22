@@ -1,0 +1,19 @@
+<form (ngSubmit)="loginUser()">
+    <div class="container">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Username</label>
+        <input type="text" [(ngModel)]="user.username" #name="ngModel" name="name"
+        [class.is-invalid]="name.invalid && name.touched" [class.is-valid]="name.valid" required
+        class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="user.password"  #pwd="ngModel"
+        [class.is-invalid]="pwd.invalid && pwd.touched" [class.is-valid]="pwd.valid" required
+         id="exampleInputPassword1">
+      </div>
+      <button type="submit" name="btn" class="btn btn-dark">Login</button>
+      <br>
+     <p class="mt-4">Don't have an account?<a href="signup" class="" style="text-decoration: none;"> Sign Up</a> </p>
+    </div>
+  </form>
