@@ -13,7 +13,7 @@ App.use(express.json());
 App.use(bodyParser.json());
 App.use(express.urlencoded({extended:true}));
 App.use(cors());
-App.use(express.static('./dist/library-app'));
+App.use(express.static(path.join(__dirname +"/FrontEnd")));
 
 //port
 const port=3000;
@@ -208,5 +208,5 @@ App.route("/api/deletebook/:id")
 });
 
 App.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/library-app/index.html'));
+    res.sendFile(path.join(__dirname + '/frontend/index.html'));
 });
